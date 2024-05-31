@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  label {
-    @apply flex flex-col gap-1 font-medium;
-  }
-
   input,
   textarea {
     @apply border py-1 px-2 rounded font-normal;

@@ -6,7 +6,6 @@ import { getTodayDate } from "~/utils/date";
 
 export default function WorkForm(props: FormProps) {
   const [data, setData] = createSignal<Work>();
-  console.log(getTodayDate());
 
   function handleInput(e: Event) {
     e.preventDefault();

@@ -4,7 +4,7 @@ interface Props {
   id?: string;
   type: "button" | "submit" | "reset" | undefined;
   children: JSXElement;
-  action?: () => void;
+  click?: () => void;
 }
 
 export default function Button(props: Props) {
@@ -12,8 +12,8 @@ export default function Button(props: Props) {
     <button
       id={props.id}
       type={props.type}
-      onClick={props.action}
-      class="w-fit h-fit flex border rounded-md hover:bg-gray-100 active:scale-95"
+      onClick={props.click}
+      class="flex border rounded-md hover:bg-gray-100 active:scale-95"
     >
       {props.children}
     </button>

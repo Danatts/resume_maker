@@ -2,7 +2,7 @@ import Button from "~/components/common/Button";
 import ImportIcon from "~/icons/ImportIcon";
 import PrintIcon from "~/icons/PrintIcon";
 import SaveIcon from "~/icons/SaveIcon";
-import { setResume, resume } from "~/store/resumeStore";
+import { resume, setResume } from "~/store/resumeStore";
 
 export default function Toolbar() {
   const ICON_SIZE = 30;
@@ -23,19 +23,19 @@ export default function Toolbar() {
   }
 
   return (
-    <ul class="flex flex-row gap-4 px-2 py-0.5 border rounded-md fixed bottom-1 left-1/2 -translate-x-1/2">
+    <ul class="flex flex-row gap-4 px-2 py-1 border rounded-md fixed bottom-1 left-1/2 -translate-x-1/2">
       <li>
-        <Button type="button" action={handleSave}>
+        <Button type="button" click={handleSave}>
           <SaveIcon size={ICON_SIZE} />
         </Button>
       </li>
       <li>
-        <Button type="button" action={handleImport}>
+        <Button type="button" click={handleImport}>
           <ImportIcon size={ICON_SIZE} />
         </Button>
       </li>
       <li>
-        <Button type="button" action={handlePrint}>
+        <Button type="button" click={handlePrint}>
           <PrintIcon size={ICON_SIZE} />
         </Button>
       </li>

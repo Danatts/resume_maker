@@ -1,7 +1,7 @@
+import { For, Show } from "solid-js";
 import Pill from "~/components/preview/common/Pill";
 import Section from "~/components/preview/common/PreviewSection";
 import { resume } from "~/store/resumeStore";
-import { For, Show } from "solid-js";
 
 export default function SkillPreview(props: { show: boolean }) {
   return (

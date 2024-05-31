@@ -1,3 +1,5 @@
+import { type JSXElement, Show } from "solid-js";
+import { Dynamic } from "solid-js/web";
 import Github from "~/icons/GithubIcon";
 import Globe from "~/icons/GlobeIcon";
 import Linkedin from "~/icons/LinkedinIcon";
@@ -5,8 +7,6 @@ import Location from "~/icons/LocationIcon";
 import Mail from "~/icons/MailIcon";
 import Phone from "~/icons/PhoneIcon";
 import type { SocialIcon } from "~/types.d.ts";
-import { type JSXElement, Show } from "solid-js";
-import { Dynamic } from "solid-js/web";
 
 const SOCIAL_ICONS: SocialIcon = {
   Github,

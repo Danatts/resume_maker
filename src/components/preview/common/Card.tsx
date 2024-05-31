@@ -1,5 +1,5 @@
-import { formatDate } from "~/utils/date";
 import { type JSXElement, Show } from "solid-js";
+import { formatDate } from "~/utils/date";
 
 interface Props {
   title?: string;

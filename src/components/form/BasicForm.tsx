@@ -1,6 +1,7 @@
 import { createSignal } from "solid-js";
 import Button from "~/components/common/Button";
 import FormSection from "~/components/form/common/FormSection";
+import Label from "~/components/form/common/Label";
 import CameraIcon from "~/icons/CameraIcon";
 import ph from "~/resources/resumePlaceholder";
 import { resume, setResume } from "~/store/resumeStore";
@@ -31,7 +32,7 @@ export default function BasicsForm() {
   return (
     <FormSection title={"Basics"} section={"basics"}>
       <form id="basics" name="basics" onInput={handleInput}>
-        <label for="name">
+        <Label for="name">
           Name
           <input
             autocomplete="name"
@@ -41,18 +42,18 @@ export default function BasicsForm() {
             type="text"
             value={resume?.basics?.name ? resume.basics.name : ""}
           />
-        </label>
-        <label for="label">
+        </Label>
+        <Label for="label">
           Label
           <input
             placeholder={ph.basics.label}
-            id="label"
-            name="label"
+            id="Label"
+            name="Label"
             type="text"
             value={resume?.basics?.label ? resume.basics.label : ""}
           />
-        </label>
-        <label for="email">
+        </Label>
+        <Label for="email">
           Email
           <input
             autocomplete="email"
@@ -62,8 +63,8 @@ export default function BasicsForm() {
             type="email"
             value={resume?.basics?.email ? resume.basics.email : ""}
           />
-        </label>
-        <label for="phone">
+        </Label>
+        <Label for="phone">
           Phone
           <input
             autocomplete="tel"
@@ -73,8 +74,8 @@ export default function BasicsForm() {
             type="tel"
             value={resume?.basics?.phone ? resume.basics.phone : ""}
           />
-        </label>
-        <label for="url">
+        </Label>
+        <Label for="url">
           Website
           <input
             autocomplete="url"
@@ -84,8 +85,8 @@ export default function BasicsForm() {
             type="url"
             value={resume?.basics?.url ? resume.basics.url : ""}
           />
-        </label>
-        <label for="city">
+        </Label>
+        <Label for="city">
           City
           <input
             placeholder={ph.basics.city}
@@ -94,8 +95,8 @@ export default function BasicsForm() {
             type="text"
             value={resume?.basics?.city ? resume.basics.city : ""}
           />
-        </label>
-        <label for="region">
+        </Label>
+        <Label for="region">
           Country
           <input
             autocomplete="county"
@@ -105,8 +106,8 @@ export default function BasicsForm() {
             type="text"
             value={resume?.basics?.region ? resume.basics.region : ""}
           />
-        </label>
-        <label for="summary">
+        </Label>
+        <Label for="summary">
           Summary
           <textarea
             placeholder={ph.basics.summary}
@@ -114,7 +115,7 @@ export default function BasicsForm() {
             name="summary"
             value={resume?.basics?.summary ? resume.basics.summary : ""}
           />
-        </label>
+        </Label>
       </form>
       <form
         class="self-center"
@@ -122,10 +123,7 @@ export default function BasicsForm() {
         onError={handleImageError}
       >
         <Button type="button">
-          <label
-            for="image"
-            class="p-2 flex flex-col items-center justify-center cursor-pointer"
-          >
+          <Label for="image">
             <input
               id="image"
               name="image"
@@ -135,7 +133,7 @@ export default function BasicsForm() {
             />
             <CameraIcon size={40} />
             <p>Upload profile picture</p>
-          </label>
+          </Label>
         </Button>
       </form>
     </FormSection>

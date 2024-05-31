@@ -48,7 +48,7 @@ export default function ListCards(props: Props) {
           )}
         </For>
         <div class="self-center">
-          <Button type="button" action={addCard}>
+          <Button type="button" click={addCard}>
             <p class="px-2 py-1">Add</p>
           </Button>
         </div>

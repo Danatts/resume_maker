@@ -1,8 +1,8 @@
+import { Show } from "solid-js";
 import Contact from "~/components/preview/common/Contact";
 import Section from "~/components/preview/common/PreviewSection";
 import Text from "~/components/preview/common/TextStyle";
 import { resume } from "~/store/resumeStore";
-import { Show } from "solid-js";
 
 export default function BasicPreview(props: { show: boolean }) {
   return (

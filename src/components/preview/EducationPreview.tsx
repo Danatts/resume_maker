@@ -1,7 +1,7 @@
+import { For, Show } from "solid-js";
 import Card from "~/components/preview/common/Card";
 import Section from "~/components/preview/common/PreviewSection";
 import { resume } from "~/store/resumeStore";
-import { For, Show } from "solid-js";
 
 export default function EducationPreview(props: { show: boolean }) {
   return (
