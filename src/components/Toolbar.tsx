@@ -20,6 +20,7 @@ export default function Toolbar() {
     const saved = window.localStorage.getItem("resume");
     if (!saved) return alert("Could not load any data");
     setResume(JSON.parse(atob(saved)));
+    setResume("basics", "image", undefined);
   }
 
   return (

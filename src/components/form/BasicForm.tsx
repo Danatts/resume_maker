@@ -24,11 +24,6 @@ export default function BasicsForm() {
     setResume("basics", "image", URL.createObjectURL(files[0]));
   }
 
-  function handleImageError(e: Event) {
-    e.preventDefault();
-    setResume("basics", "image", undefined);
-  }
-
   return (
     <FormSection title={"Basics"} section={"basics"}>
       <form id="basics" name="basics" onInput={handleInput}>
@@ -47,7 +42,7 @@ export default function BasicsForm() {
           Label
           <input
             placeholder={ph.basics.label}
-            id="Label"
+            id="label"
             name="Label"
             type="text"
             value={resume?.basics?.label ? resume.basics.label : ""}
@@ -120,7 +115,6 @@ export default function BasicsForm() {
       <form
         class="self-center"
         onChange={handleImageUpload}
-        onError={handleImageError}
       >
         <Button type="button">
           <Label for="image">
