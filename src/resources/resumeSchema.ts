@@ -1,0 +1,15 @@
+export default {
+  basics: {},
+  profiles: [],
+  work: [],
+  volunteer: [],
+  education: [],
+  awards: [],
+  certificates: [],
+  publications: [],
+  skills: [],
+  languages: [],
+  interests: [],
+  references: [],
+  projects: [],
+};
