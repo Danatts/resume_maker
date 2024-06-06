@@ -1,4 +1,5 @@
 import { createSignal } from "solid-js";
+import Label from "~/components/form/common/Label";
 import ph from "~/resources/resumePlaceholder";
 import { resume, setResume } from "~/store/resumeStore";
 import type { Education, FormProps } from "~/types";
@@ -16,7 +17,7 @@ export default function EducationForm(props: FormProps) {
 
   return (
     <fieldset onInput={handleInput}>
-      <label for={`area${props.key}`}>
+      <Label for={`area${props.key}`}>
         Area
         <input
           autocomplete="name"
@@ -32,8 +33,8 @@ export default function EducationForm(props: FormProps) {
                 : ""
           }
         />
-      </label>
-      <label for={`institution${props.key}`}>
+      </Label>
+      <Label for={`institution${props.key}`}>
         Institution
         <input
           id={`institution${props.key}`}
@@ -48,8 +49,8 @@ export default function EducationForm(props: FormProps) {
                 : ""
           }
         />
-      </label>
-      <label for={`url${props.key}`}>
+      </Label>
+      <Label for={`url${props.key}`}>
         Url
         <input
           id={`url${props.key}`}
@@ -64,8 +65,8 @@ export default function EducationForm(props: FormProps) {
                 : ""
           }
         />
-      </label>
-      <label for={`startDate${props.key}`}>
+      </Label>
+      <Label for={`startDate${props.key}`}>
         Starting date
         <input
           id={`startDate${props.key}`}
@@ -79,8 +80,8 @@ export default function EducationForm(props: FormProps) {
                 : undefined
           }
         />
-      </label>
-      <label for={`endDate${props.key}`}>
+      </Label>
+      <Label for={`endDate${props.key}`}>
         Ending date
         <input
           id={`endDate${props.key}`}
@@ -95,9 +96,9 @@ export default function EducationForm(props: FormProps) {
                 : undefined
           }
         />
-      </label>
+      </Label>
       {/*
-			<label for="studyType">
+			<Label for="studyType">
 				Type
 				<input
 					id="studyType"
@@ -105,8 +106,8 @@ export default function EducationForm(props: FormProps) {
 					type="text"
 					placeholder={education[0].studyType}
 				/>
-			</label>
-			<label for="score">
+			</Label>
+			<Label for="score">
 				Score
 				<input
 					id="score"
@@ -114,8 +115,8 @@ export default function EducationForm(props: FormProps) {
 					type="text"
 					placeholder={education[0].score}
 				/>
-			</label>
-			<label for="courses">
+			</Label>
+			<Label for="courses">
 				Courses
 				<input
 					id="courses"
@@ -123,7 +124,7 @@ export default function EducationForm(props: FormProps) {
 					type="text"
 					placeholder={education[0].courses[0]}
 				/>
-			</label>
+			</Label>
       */}
     </fieldset>
   );

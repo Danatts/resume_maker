@@ -1,4 +1,5 @@
 import { createSignal } from "solid-js";
+import Label from "~/components/form/common/Label";
 import ph from "~/resources/resumePlaceholder";
 import { resume, setResume } from "~/store/resumeStore";
 import type { FormProps, Skill } from "~/types";
@@ -15,7 +16,7 @@ export default function SkillForm(props: FormProps) {
 
   return (
     <fieldset onInput={handleInput}>
-      <label for={`name${props.key}`}>
+      <Label for={`name${props.key}`}>
         Name
         <input
           autocomplete="name"
@@ -31,8 +32,8 @@ export default function SkillForm(props: FormProps) {
                 : ""
           }
         />
-      </label>
-      <label for={`level${props.key}`}>
+      </Label>
+      <Label for={`level${props.key}`}>
         Level
         <input
           placeholder={ph.skills[0].level}
@@ -47,9 +48,9 @@ export default function SkillForm(props: FormProps) {
                 : ""
           }
         />
-      </label>
+      </Label>
       {/*
-			<label for="keywords">
+			<Label for="keywords">
 				Keywords
 				<input
 					placeholder={skills[0].keywords[0]}
@@ -57,7 +58,7 @@ export default function SkillForm(props: FormProps) {
 					name="keywords"
 					type="text"
 				/>
-			</label>
+			</Label>
       */}
     </fieldset>
   );

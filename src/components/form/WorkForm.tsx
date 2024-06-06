@@ -3,6 +3,7 @@ import ph from "~/resources/resumePlaceholder";
 import { resume, setResume } from "~/store/resumeStore";
 import type { FormProps, Work } from "~/types";
 import { getTodayDate } from "~/utils/date";
+import Label from "~/components/form/common/Label";
 
 export default function WorkForm(props: FormProps) {
   const [data, setData] = createSignal<Work>({});
@@ -16,7 +17,7 @@ export default function WorkForm(props: FormProps) {
 
   return (
     <fieldset onInput={handleInput}>
-      <label for={`position${props.key}`}>
+      <Label for={`position${props.key}`}>
         Position
         <input
           id={`position${props.key}`}
@@ -31,8 +32,8 @@ export default function WorkForm(props: FormProps) {
                 : ""
           }
         />
-      </label>
-      <label for={`name${props.key}`}>
+      </Label>
+      <Label for={`name${props.key}`}>
         Company
         <input
           autocomplete="name"
@@ -48,8 +49,8 @@ export default function WorkForm(props: FormProps) {
                 : ""
           }
         />
-      </label>
-      <label for={`url${props.key}`}>
+      </Label>
+      <Label for={`url${props.key}`}>
         Url
         <input
           id={`url${props.key}`}
@@ -64,8 +65,8 @@ export default function WorkForm(props: FormProps) {
                 : ""
           }
         />
-      </label>
-      <label for={`startDate${props.key}`}>
+      </Label>
+      <Label for={`startDate${props.key}`}>
         Starting date
         <input
           id={`startDate${props.key}`}
@@ -79,8 +80,8 @@ export default function WorkForm(props: FormProps) {
                 : undefined
           }
         />
-      </label>
-      <label for={`endDate${props.key}`}>
+      </Label>
+      <Label for={`endDate${props.key}`}>
         Ending date
         <input
           id={`endDate${props.key}`}
@@ -95,8 +96,8 @@ export default function WorkForm(props: FormProps) {
                 : undefined
           }
         />
-      </label>
-      <label for={`summary${props.key}`}>
+      </Label>
+      <Label for={`summary${props.key}`}>
         Summary
         <textarea
           id={`summary${props.key}`}
@@ -110,9 +111,9 @@ export default function WorkForm(props: FormProps) {
                 : ""
           }
         />
-      </label>
+      </Label>
       {/*
-			<label for="highlights">
+			<Label for="highlights">
 				Highlights
 				<input
 					id="highlights"
@@ -120,7 +121,7 @@ export default function WorkForm(props: FormProps) {
 					type="text"
 					placeholder={work[0].highlights[0]}
 				/>
-			</label>
+			</Label>
       */}
     </fieldset>
   );

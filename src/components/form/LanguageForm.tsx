@@ -1,4 +1,5 @@
 import { createSignal } from "solid-js";
+import Label from "~/components/form/common/Label";
 import ph from "~/resources/resumePlaceholder";
 import { resume, setResume } from "~/store/resumeStore";
 import type { FormProps, Language } from "~/types";
@@ -15,7 +16,7 @@ export default function LanguageForm(props: FormProps) {
 
   return (
     <fieldset onInput={handleInput}>
-      <label for={`language${props.key}`}>
+      <Label for={`language${props.key}`}>
         Language
         <input
           placeholder={ph.languages[0].language}
@@ -30,8 +31,8 @@ export default function LanguageForm(props: FormProps) {
                 : ""
           }
         />
-      </label>
-      <label for={`fluency${props.key}`}>
+      </Label>
+      <Label for={`fluency${props.key}`}>
         Fluency
         <input
           placeholder={ph.languages[0].fluency}
@@ -46,7 +47,7 @@ export default function LanguageForm(props: FormProps) {
                 : ""
           }
         />
-      </label>
+      </Label>
     </fieldset>
   );
 }
