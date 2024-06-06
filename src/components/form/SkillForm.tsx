@@ -4,7 +4,7 @@ import { resume, setResume } from "~/store/resumeStore";
 import type { FormProps, Skill } from "~/types";
 
 export default function SkillForm(props: FormProps) {
-  const [data, setData] = createSignal<Skill>();
+  const [data, setData] = createSignal<Skill>({});
 
   function handleInput(e: Event) {
     e.preventDefault();
@@ -24,9 +24,11 @@ export default function SkillForm(props: FormProps) {
           name="name"
           type="text"
           value={
-            resume?.skills[props.key]?.name
-              ? resume.skills[props.key].name
-              : null
+            !resume.skills
+              ? ""
+              : resume?.skills[props.key]?.name
+                ? resume.skills[props.key].name
+                : ""
           }
         />
       </label>
@@ -38,9 +40,11 @@ export default function SkillForm(props: FormProps) {
           name="level"
           type="text"
           value={
-            resume?.skills[props.key]?.level
-              ? resume.skills[props.key].level
-              : null
+            !resume.skills
+              ? ""
+              : resume?.skills[props.key]?.level
+                ? resume.skills[props.key].level
+                : ""
           }
         />
       </label>

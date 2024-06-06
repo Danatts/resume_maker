@@ -5,7 +5,7 @@ import type { FormProps, Work } from "~/types";
 import { getTodayDate } from "~/utils/date";
 
 export default function WorkForm(props: FormProps) {
-  const [data, setData] = createSignal<Work>();
+  const [data, setData] = createSignal<Work>({});
 
   function handleInput(e: Event) {
     e.preventDefault();
@@ -24,9 +24,11 @@ export default function WorkForm(props: FormProps) {
           type="text"
           placeholder={ph.work[0].position}
           value={
-            resume?.work[props.key]?.position
-              ? resume.work[props.key].position
-              : null
+            !resume.work
+              ? ""
+              : resume?.work[props.key]?.position
+                ? resume.work[props.key].position
+                : ""
           }
         />
       </label>
@@ -39,7 +41,11 @@ export default function WorkForm(props: FormProps) {
           type="text"
           placeholder={ph.work[0].name}
           value={
-            resume?.work[props.key]?.name ? resume.work[props.key].name : null
+            !resume.work
+              ? ""
+              : resume?.work[props.key]?.name
+                ? resume.work[props.key].name
+                : ""
           }
         />
       </label>
@@ -51,7 +57,11 @@ export default function WorkForm(props: FormProps) {
           type="url"
           placeholder={ph.work[0].url}
           value={
-            resume?.work[props.key]?.url ? resume.work[props.key].url : null
+            !resume.work
+              ? ""
+              : resume?.work[props.key]?.url
+                ? resume.work[props.key].url
+                : ""
           }
         />
       </label>
@@ -62,9 +72,11 @@ export default function WorkForm(props: FormProps) {
           name="startDate"
           type="date"
           value={
-            resume?.work[props.key]?.startDate
-              ? resume.work[props.key].startDate
-              : null
+            !resume.work
+              ? ""
+              : resume?.work[props.key]?.startDate
+                ? resume.work[props.key].startDate
+                : undefined
           }
         />
       </label>
@@ -76,9 +88,11 @@ export default function WorkForm(props: FormProps) {
           type="date"
           max={getTodayDate()}
           value={
-            resume?.work[props.key]?.endDate
-              ? resume.work[props.key].endDate
-              : null
+            !resume.work
+              ? ""
+              : resume?.work[props.key]?.endDate
+                ? resume.work[props.key].endDate
+                : undefined
           }
         />
       </label>
@@ -89,9 +103,11 @@ export default function WorkForm(props: FormProps) {
           name="summary"
           placeholder={ph.work[0].summary}
           value={
-            resume?.work[props.key]?.summary
-              ? resume.work[props.key].summary
-              : null
+            !resume.work
+              ? ""
+              : resume?.work[props.key]?.summary
+                ? resume.work[props.key].summary
+                : ""
           }
         />
       </label>

@@ -119,7 +119,7 @@ export type Project = {
 };
 
 export type FormProps = {
-  key?: number;
+  key: number;
 };
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>

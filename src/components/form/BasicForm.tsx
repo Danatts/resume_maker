@@ -112,10 +112,7 @@ export default function BasicsForm() {
           />
         </Label>
       </form>
-      <form
-        class="self-center"
-        onChange={handleImageUpload}
-      >
+      <form class="self-center" onChange={handleImageUpload}>
         <Button type="button">
           <Label for="image">
             <input

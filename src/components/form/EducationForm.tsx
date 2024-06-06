@@ -5,7 +5,7 @@ import type { Education, FormProps } from "~/types";
 import { getTodayDate } from "~/utils/date";
 
 export default function EducationForm(props: FormProps) {
-  const [data, setData] = createSignal<Education>();
+  const [data, setData] = createSignal<Education>({});
 
   function handleInput(e: Event) {
     e.preventDefault();
@@ -25,9 +25,11 @@ export default function EducationForm(props: FormProps) {
           type="text"
           placeholder={ph.education[0].area}
           value={
-            resume?.education[props.key]?.area
-              ? resume.education[props.key].area
-              : null
+            !resume.education
+              ? ""
+              : resume?.education[props.key]?.area
+                ? resume.education[props.key].area
+                : ""
           }
         />
       </label>
@@ -39,9 +41,11 @@ export default function EducationForm(props: FormProps) {
           type="text"
           placeholder={ph.education[0].institution}
           value={
-            resume?.education[props.key]?.institution
-              ? resume.education[props.key].institution
-              : null
+            !resume.education
+              ? ""
+              : resume?.education[props.key]?.institution
+                ? resume.education[props.key].institution
+                : ""
           }
         />
       </label>
@@ -53,9 +57,11 @@ export default function EducationForm(props: FormProps) {
           type="url"
           placeholder={ph.education[0].url}
           value={
-            resume?.education[props.key]?.url
-              ? resume.education[props.key].url
-              : null
+            !resume.education
+              ? ""
+              : resume?.education[props.key]?.url
+                ? resume.education[props.key].url
+                : ""
           }
         />
       </label>
@@ -66,9 +72,11 @@ export default function EducationForm(props: FormProps) {
           name="startDate"
           type="date"
           value={
-            resume?.education[props.key]?.startDate
-              ? resume.education[props.key].startDate
-              : null
+            !resume.education
+              ? ""
+              : resume?.education[props.key]?.startDate
+                ? resume.education[props.key].startDate
+                : undefined
           }
         />
       </label>
@@ -80,9 +88,11 @@ export default function EducationForm(props: FormProps) {
           type="date"
           max={getTodayDate()}
           value={
-            resume?.education[props.key]?.endDate
-              ? resume.education[props.key].endDate
-              : null
+            !resume.education
+              ? ""
+              : resume?.education[props.key]?.endDate
+                ? resume.education[props.key].endDate
+                : undefined
           }
         />
       </label>

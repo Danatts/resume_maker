@@ -4,7 +4,7 @@ import { resume, setResume } from "~/store/resumeStore";
 import type { FormProps, Language } from "~/types";
 
 export default function LanguageForm(props: FormProps) {
-  const [data, setData] = createSignal<Language>();
+  const [data, setData] = createSignal<Language>({});
 
   function handleInput(e: Event) {
     e.preventDefault();
@@ -23,9 +23,11 @@ export default function LanguageForm(props: FormProps) {
           name="language"
           type="text"
           value={
-            resume?.languages[props.key]?.language
-              ? resume.languages[props.key].language
-              : null
+            !resume.languages
+              ? ""
+              : resume?.languages[props.key]?.language
+                ? resume.languages[props.key].language
+                : ""
           }
         />
       </label>
@@ -37,9 +39,11 @@ export default function LanguageForm(props: FormProps) {
           name="fluency"
           type="text"
           value={
-            resume?.languages[props.key]?.fluency
-              ? resume.languages[props.key].fluency
-              : null
+            !resume.languages
+              ? ""
+              : resume?.languages[props.key]?.fluency
+                ? resume.languages[props.key].fluency
+                : ""
           }
         />
       </label>
