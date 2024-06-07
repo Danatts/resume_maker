@@ -21,18 +21,18 @@ export default function BasicPreview(props: { show: boolean }) {
               </h2>
             </Show>
             <Show when={resume.basics?.email}>
-              <Contact network={"Mail"}>{resume.basics?.email}</Contact>
+              <Contact icon={"Mail"}>{resume.basics?.email}</Contact>
             </Show>
             <Show when={resume.basics?.phone}>
-              <Contact network={"Phone"}>{resume.basics?.phone}</Contact>
+              <Contact icon={"Phone"}>{resume.basics?.phone}</Contact>
             </Show>
             <Show when={resume.basics?.url}>
-              <Contact network={"Globe"} url={resume.basics?.url}>
+              <Contact icon={"Website"} url={resume.basics?.url}>
                 <p>Website</p>
               </Contact>
             </Show>
             <Show when={resume.basics?.city || resume.basics?.region}>
-              <Contact network={"Location"}>
+              <Contact icon={"Location"}>
                 <Show when={resume.basics?.city}>
                   <span>{resume.basics?.city}</span>
                 </Show>
