@@ -3,13 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+
   input,
   textarea {
     @apply border py-1 px-2 rounded font-normal;
-  }
-
-  form,
-  fieldset {
-    @apply flex flex-col gap-4;
   }
 }

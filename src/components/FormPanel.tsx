@@ -3,7 +3,7 @@ import List from "~/components/form/common/ListCards";
 
 export default function FormPanel() {
   return (
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2 print:hidden">
       <Basic />
       <List
         componentName={"WorkForm"}

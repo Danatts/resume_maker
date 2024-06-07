@@ -8,10 +8,12 @@ export default function App() {
   return (
     <MetaProvider>
       <Title>Resume Maker</Title>
-      <main>
+      <main class="p-2">
+        <section class="grid gap-4 lg:grid-cols-2">
+          <FormPanel />
+          <PreviewPanel />
+        </section>
         <Toolbar />
-        <FormPanel />
-        <PreviewPanel />
       </main>
     </MetaProvider>
   );

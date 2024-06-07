@@ -1,8 +1,10 @@
 @media print {
   .at_print {
     display: block;
+    background: white;
     height: 100%;
-    position: static;
+    position: absolute;
     width: 100%;
+    z-index: 10;
   }
 }
