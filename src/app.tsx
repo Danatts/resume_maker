@@ -1,8 +1,8 @@
 import { MetaProvider, Title } from "@solidjs/meta";
 import FormPanel from "~/components/FormPanel";
 import Toolbar from "~/components/Toolbar";
-import "~/styles/index.css";
 import PreviewPanel from "~/components/PreviewPanel";
+import "~/styles/index.css";
 
 export default function App() {
   return (
