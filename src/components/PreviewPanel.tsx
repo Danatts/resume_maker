@@ -7,12 +7,14 @@ import { view } from "~/store/viewStore";
 
 export default function Preview() {
   return (
-    <div id="preview" class="border border-black p-10 shadow-black shadow-md">
-      <Basics show={view.basics} />
-      <Work show={view.work} />
-      <Education show={view.education} />
-      <Skill show={view.skills} />
-      <Language show={view.languages} />
+    <div class="min-h-dvh border border-black shadow-black shadow-md scale-90">
+      <div id="preview" class="p-10">
+        <Basics show={view.basics} />
+        <Work show={view.work} />
+        <Education show={view.education} />
+        <Skill show={view.skills} />
+        <Language show={view.languages} />
+      </div>
     </div>
   );
 }
