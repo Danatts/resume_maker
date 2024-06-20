@@ -1,17 +1,17 @@
-import { createSignal } from "solid-js";
-import Label from "~/components/form/common/Label";
-import ph from "~/resources/resumePlaceholder";
+import { createStore } from "solid-js/store";
+import Label from "~/components/Form/common/Label";
+import ph from "~/components/Form/placeholder";
 import { resume, setResume } from "~/store/resumeStore";
 import type { FormProps, Skill } from "~/types";
 
 export default function SkillForm(props: FormProps) {
-  const [data, setData] = createSignal<Skill>({});
+  const [data, setData] = createStore<Skill>({});
 
   function handleInput(e: Event) {
     e.preventDefault();
     const { name, value } = e.target as HTMLInputElement;
-    setData({ ...data(), [name]: value });
-    setResume("skills", props.key, data());
+    setData(name as keyof Skill, value);
+    setResume("skills", "data", props.key, data);
   }
 
   return (
@@ -20,15 +20,15 @@ export default function SkillForm(props: FormProps) {
         Name
         <input
           autocomplete="name"
-          placeholder={ph.skills[0].name}
+          placeholder={ph.skills?.data[0].name}
           id={`name${props.key}`}
           name="name"
           type="text"
           value={
-            !resume.skills
+            !resume.skills?.data
               ? ""
-              : resume?.skills[props.key]?.name
-                ? resume.skills[props.key].name
+              : resume?.skills.data[props.key]?.name
+                ? resume.skills.data[props.key].name
                 : ""
           }
         />
@@ -36,30 +36,19 @@ export default function SkillForm(props: FormProps) {
       <Label for={`level${props.key}`}>
         Level
         <input
-          placeholder={ph.skills[0].level}
+          placeholder={ph.skills?.data[0].level}
           id={`level${props.key}`}
           name="level"
           type="text"
           value={
-            !resume.skills
+            !resume.skills?.data
               ? ""
-              : resume?.skills[props.key]?.level
-                ? resume.skills[props.key].level
+              : resume?.skills.data[props.key]?.level
+                ? resume.skills.data[props.key].level
                 : ""
           }
         />
       </Label>
-      {/*
-			<Label for="keywords">
-				Keywords
-				<input
-					placeholder={skills[0].keywords[0]}
-					id="keywords"
-					name="keywords"
-					type="text"
-				/>
-			</Label>
-      */}
     </fieldset>
   );
 }

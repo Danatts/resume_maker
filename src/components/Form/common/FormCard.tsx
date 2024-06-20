@@ -2,9 +2,8 @@ import type { JSXElement } from "solid-js";
 import TrashIcon from "~/icons/TrashIcon";
 
 interface Props {
+  delete(): void;
   children: JSXElement;
-  delete(id: number): void;
-  key: number;
 }
 
 export default function FormCard(props: Props) {
@@ -13,7 +12,7 @@ export default function FormCard(props: Props) {
       <button
         class="w-fit self-end"
         type="button"
-        onClick={() => props.delete(props.key)}
+        onClick={() => props.delete()}
       >
         <TrashIcon size={18} />
       </button>

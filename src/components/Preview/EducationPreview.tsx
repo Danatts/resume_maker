@@ -1,20 +1,19 @@
 import { For, Show } from "solid-js";
-import Card from "~/components/preview/common/Card";
-import Section from "~/components/preview/common/PreviewSection";
+import Card from "~/components/Preview/common/Card";
+import Section from "~/components/Preview/common/PreviewSection";
 import { resume } from "~/store/resumeStore";
 
-export default function EducationPreview(props: { show: boolean }) {
+export default function EducationPreview() {
   return (
-    <Show when={props.show}>
-      <Section title={"Education"}>
+    <Show when={resume.education?.view}>
+      <Section title={resume.education?.legend}>
         <ul class="flex flex-col gap-4">
-          <For each={resume.education}>
+          <For each={resume.education?.data}>
             {(e) => (
               <li>
                 <Card
                   title={e.area}
                   subtitle={e.institution}
-                  subUrl={e.url}
                   start={e.startDate}
                   end={e.endDate}
                 />

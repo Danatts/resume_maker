@@ -1,21 +1,17 @@
 import { For, createSignal } from "solid-js";
-import type { Part } from "solid-js/store";
 import { Dynamic } from "solid-js/web";
 import Button from "~/components/common/Button";
-import EducationForm from "~/components/form/EducationForm";
-import LanguageForm from "~/components/form/LanguageForm";
-import SkillForm from "~/components/form/SkillForm";
-import WorkForm from "~/components/form/WorkForm";
-import FormCard from "~/components/form/common/FormCard";
-import FormSection from "~/components/form/common/FormSection";
+import EducationForm from "~/components/Form/EducationForm";
+import LanguageForm from "~/components/Form/LanguageForm";
+import SkillForm from "~/components/Form/SkillForm";
+import WorkForm from "~/components/Form/WorkForm";
+import FormCard from "~/components/Form/common/FormCard";
+import FormSection from "~/components/Form/common/FormSection";
 import { resume, setResume } from "~/store/resumeStore";
-import type { Resume } from "~/types";
 
 interface Props {
-  componentName: string;
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  formID: string | Part<Resume, any>;
-  legend: string;
+  componentName: keyof typeof FORM;
+  section: keyof typeof resume;
 }
 
 const FORM = {
@@ -34,15 +30,15 @@ export default function ListCards(props: Props) {
 
   function removeCard(id: number) {
     setList(list().filter((_, i) => i !== id));
-    setResume(props.formID, [...resume[props.formID]].toSpliced(id, 1));
+    setResume(props.section, "data", [...resume[props.section]?.data].toSpliced(id, 1));
   }
 
   return (
-    <FormSection title={props.legend} section={props.formID}>
-      <form id={props.formID} name={props.formID}>
+    <FormSection section={props.section}>
+      <form id={props.section} name={props.section}>
         <For each={list()}>
           {(_, index) => (
-            <FormCard key={index()} delete={removeCard}>
+            <FormCard delete={() => removeCard(index())}>
               <Dynamic component={FORM[props.componentName]} key={index()} />
             </FormCard>
           )}

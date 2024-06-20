@@ -1,17 +1,17 @@
-import { createSignal } from "solid-js";
-import Label from "~/components/form/common/Label";
-import ph from "~/resources/resumePlaceholder";
+import { createStore } from "solid-js/store";
+import Label from "~/components/Form/common/Label";
+import ph from "~/components/Form/placeholder";
 import { resume, setResume } from "~/store/resumeStore";
 import type { FormProps, Language } from "~/types";
 
 export default function LanguageForm(props: FormProps) {
-  const [data, setData] = createSignal<Language>({});
+  const [data, setData] = createStore<Language>({});
 
   function handleInput(e: Event) {
     e.preventDefault();
     const { name, value } = e.target as HTMLInputElement;
-    setData({ ...data(), [name]: value });
-    setResume("languages", props.key, data());
+    setData(name as keyof Language, value);
+    setResume("languages", "data", props.key, data);
   }
 
   return (
@@ -19,15 +19,15 @@ export default function LanguageForm(props: FormProps) {
       <Label for={`language${props.key}`}>
         Language
         <input
-          placeholder={ph.languages[0].language}
+          placeholder={ph.languages?.data[0].language}
           id={`language${props.key}`}
           name="language"
           type="text"
           value={
-            !resume.languages
+            !resume.languages?.data
               ? ""
-              : resume?.languages[props.key]?.language
-                ? resume.languages[props.key].language
+              : resume?.languages.data[props.key]?.language
+                ? resume.languages.data[props.key].language
                 : ""
           }
         />
@@ -35,15 +35,15 @@ export default function LanguageForm(props: FormProps) {
       <Label for={`fluency${props.key}`}>
         Fluency
         <input
-          placeholder={ph.languages[0].fluency}
+          placeholder={ph.languages?.data[0].fluency}
           id={`fluency${props.key}`}
           name="fluency"
           type="text"
           value={
-            !resume.languages
+            !resume.languages?.data
               ? ""
-              : resume?.languages[props.key]?.fluency
-                ? resume.languages[props.key].fluency
+              : resume?.languages.data[props.key]?.fluency
+                ? resume.languages.data[props.key].fluency
                 : ""
           }
         />
