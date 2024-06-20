@@ -13,17 +13,17 @@ export type Resume = {
     legend?: string;
     view?: boolean;
     data?: Education[];
-  }
+  };
   skills?: {
     legend?: string;
     view?: boolean;
     data?: Skill[];
-  }
+  };
   languages?: {
     legend?: string;
     view?: boolean;
     data?: Language[];
-  }
+  };
 };
 
 export type Basics = {

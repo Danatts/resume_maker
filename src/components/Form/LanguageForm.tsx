@@ -19,7 +19,7 @@ export default function LanguageForm(props: FormProps) {
       <Label for={`language${props.key}`}>
         Language
         <input
-          placeholder={ph.languages?.data[0].language}
+          placeholder={ph.languages?.data ? ph.languages?.data[0].language : ""}
           id={`language${props.key}`}
           name="language"
           type="text"
@@ -35,7 +35,7 @@ export default function LanguageForm(props: FormProps) {
       <Label for={`fluency${props.key}`}>
         Fluency
         <input
-          placeholder={ph.languages?.data[0].fluency}
+          placeholder={ph.languages?.data ? ph.languages?.data[0].fluency : ""}
           id={`fluency${props.key}`}
           name="fluency"
           type="text"

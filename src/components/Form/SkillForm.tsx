@@ -20,7 +20,7 @@ export default function SkillForm(props: FormProps) {
         Name
         <input
           autocomplete="name"
-          placeholder={ph.skills?.data[0].name}
+          placeholder={ph.skills?.data ? ph.skills?.data[0].name : ""}
           id={`name${props.key}`}
           name="name"
           type="text"
@@ -36,7 +36,7 @@ export default function SkillForm(props: FormProps) {
       <Label for={`level${props.key}`}>
         Level
         <input
-          placeholder={ph.skills?.data[0].level}
+          placeholder={ph.skills?.data ? ph.skills?.data[0].level : ""}
           id={`level${props.key}`}
           name="level"
           type="text"

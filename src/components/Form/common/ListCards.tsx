@@ -1,12 +1,12 @@
 import { For, createSignal } from "solid-js";
 import { Dynamic } from "solid-js/web";
-import Button from "~/components/common/Button";
 import EducationForm from "~/components/Form/EducationForm";
 import LanguageForm from "~/components/Form/LanguageForm";
 import SkillForm from "~/components/Form/SkillForm";
 import WorkForm from "~/components/Form/WorkForm";
 import FormCard from "~/components/Form/common/FormCard";
 import FormSection from "~/components/Form/common/FormSection";
+import Button from "~/components/common/Button";
 import { resume, setResume } from "~/store/resumeStore";
 
 interface Props {
@@ -30,7 +30,10 @@ export default function ListCards(props: Props) {
 
   function removeCard(id: number) {
     setList(list().filter((_, i) => i !== id));
-    setResume(props.section, "data", [...resume[props.section]?.data].toSpliced(id, 1));
+    const copy = resume[props.section]?.data;
+    if (copy) return null;
+    // @ts-ignore
+    setResume(props.section, "data", [...copy].toSpliced(id, 1));
   }
 
   return (

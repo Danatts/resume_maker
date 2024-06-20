@@ -31,12 +31,18 @@ export default function BasicPreview() {
                 <p>Website</p>
               </Contact>
             </Show>
-            <Show when={resume.basics?.data?.city || resume.basics?.data?.country}>
+            <Show
+              when={resume.basics?.data?.city || resume.basics?.data?.country}
+            >
               <Contact icon={"Location"}>
                 <Show when={resume.basics?.data?.city}>
                   <span>{resume.basics?.data?.city}</span>
                 </Show>
-                <Show when={resume.basics?.data?.city && resume.basics?.data?.country}>
+                <Show
+                  when={
+                    resume.basics?.data?.city && resume.basics?.data?.country
+                  }
+                >
                   <span>-</span>
                 </Show>
                 <Show when={resume.basics?.data?.country}>

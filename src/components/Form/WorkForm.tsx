@@ -1,9 +1,9 @@
 import { createStore } from "solid-js/store";
+import Label from "~/components/Form/common/Label";
 import ph from "~/components/Form/placeholder";
 import { resume, setResume } from "~/store/resumeStore";
 import type { FormProps, Work } from "~/types";
 import { getTodayDate } from "~/utils/date";
-import Label from "~/components/Form/common/Label";
 
 export default function WorkForm(props: FormProps) {
   const [data, setData] = createStore<Work>({});
@@ -23,7 +23,7 @@ export default function WorkForm(props: FormProps) {
           id={`position${props.key}`}
           name="position"
           type="text"
-          placeholder={ph.work?.data[0].position}
+          placeholder={ph.work?.data ? ph.work?.data[0].position : ""}
           value={
             !resume.work?.data
               ? ""
@@ -40,7 +40,7 @@ export default function WorkForm(props: FormProps) {
           id={`institution${props.key}`}
           name="institution"
           type="text"
-          placeholder={ph.work?.data[0].institution}
+          placeholder={ph.work?.data ? ph.work?.data[0].institution : ""}
           value={
             !resume.work?.data
               ? ""
@@ -87,7 +87,7 @@ export default function WorkForm(props: FormProps) {
         <textarea
           id={`summary${props.key}`}
           name="summary"
-          placeholder={ph.work?.data[0].summary}
+          placeholder={ph.work?.data ? ph.work?.data[0].summary : ""}
           value={
             !resume.work?.data
               ? ""

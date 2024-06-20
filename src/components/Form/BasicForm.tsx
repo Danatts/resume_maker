@@ -1,11 +1,11 @@
-import Button from "~/components/common/Button";
+import { createStore } from "solid-js/store";
 import FormSection from "~/components/Form/common/FormSection";
 import Label from "~/components/Form/common/Label";
-import CameraIcon from "~/icons/CameraIcon";
 import ph from "~/components/Form/placeholder";
+import Button from "~/components/common/Button";
+import CameraIcon from "~/icons/CameraIcon";
 import { resume, setResume } from "~/store/resumeStore";
 import type { Basics } from "~/types";
-import { createStore } from "solid-js/store";
 
 export default function BasicsForm() {
   const [data, setData] = createStore<Basics>();
@@ -99,7 +99,9 @@ export default function BasicsForm() {
             id="country"
             name="country"
             type="text"
-            value={resume?.basics?.data?.country ? resume.basics.data.country : ""}
+            value={
+              resume?.basics?.data?.country ? resume.basics.data.country : ""
+            }
           />
         </Label>
         <Label for="summary">
@@ -109,7 +111,9 @@ export default function BasicsForm() {
             id="summary"
             name="summary"
             rows={5}
-            value={resume?.basics?.data?.summary ? resume.basics.data.summary : ""}
+            value={
+              resume?.basics?.data?.summary ? resume.basics.data.summary : ""
+            }
           />
         </Label>
       </form>

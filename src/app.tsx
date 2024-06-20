@@ -1,7 +1,7 @@
 import { MetaProvider, Title } from "@solidjs/meta";
 import Form from "~/components/Form";
-import Preview from "./components/Preview";
 import Toolbar from "~/components/Toolbar";
+import Preview from "./components/Preview";
 import "~/styles/index.css";
 
 export default function App() {

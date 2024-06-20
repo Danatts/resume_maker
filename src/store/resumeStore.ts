@@ -10,22 +10,22 @@ const [resume, setResume] = createStore<Resume>({
   work: {
     legend: "Experience",
     view: true,
-    data: []
+    data: [],
   },
   education: {
     legend: "Education",
     view: true,
-    data: []
+    data: [],
   },
   skills: {
     legend: "Skills",
     view: true,
-    data: []
+    data: [],
   },
   languages: {
     legend: "Languages",
     view: true,
-    data: []
+    data: [],
   },
 });
 

@@ -14,7 +14,7 @@ export default function FormSection(props: Props) {
   const [toggle] = createSignal<boolean>(true);
 
   function handleView() {
-    setResume(props.section, "view", (view) => !view)
+    setResume(props.section, "view", (view) => !view);
   }
 
   function handleTitle(e: Event) {
@@ -27,17 +27,22 @@ export default function FormSection(props: Props) {
     <section class="border p-2 rounded">
       <header class="flex justify-between p-2">
         <div>
-          <div
-            class="flex gap-1 items-center w-full"
-          >
+          <div class="flex gap-1 items-center w-full">
             <Show when={!toggle()} fallback={<ExpandedIcon size={25} />}>
               <CollapsedIcon size={25} />
             </Show>
-            <input class="text-xl font-bold" value={resume[props.section]?.legend} onInput={handleTitle} />
+            <input
+              class="text-xl font-bold"
+              value={resume[props.section]?.legend}
+              onInput={handleTitle}
+            />
           </div>
         </div>
         <button type="button" onClick={handleView}>
-          <Show when={resume[props.section]?.view} fallback={<HideIcon size={25} />}>
+          <Show
+            when={resume[props.section]?.view}
+            fallback={<HideIcon size={25} />}
+          >
             <ShowIcon size={25} />
           </Show>
         </button>

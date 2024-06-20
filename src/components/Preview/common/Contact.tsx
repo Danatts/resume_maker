@@ -2,11 +2,11 @@ import { type JSXElement, Show } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import Github from "~/icons/GithubIcon";
 import Website from "~/icons/GlobeIcon";
+import Default from "~/icons/LinkIcon";
 import Linkedin from "~/icons/LinkedinIcon";
 import Location from "~/icons/LocationIcon";
 import Mail from "~/icons/MailIcon";
 import Phone from "~/icons/PhoneIcon";
-import Default from "~/icons/LinkIcon";
 import type { SocialIcon } from "~/types.d.ts";
 
 const SOCIAL_ICONS: SocialIcon = {
@@ -19,7 +19,14 @@ const SOCIAL_ICONS: SocialIcon = {
   Default,
 };
 
-type SOCIAL = "Github" | "Linkedin" | "Mail" | "Location" | "Phone" | "Website" | "Default"
+type SOCIAL =
+  | "Github"
+  | "Linkedin"
+  | "Mail"
+  | "Location"
+  | "Phone"
+  | "Website"
+  | "Default";
 
 interface Props {
   icon: SOCIAL;

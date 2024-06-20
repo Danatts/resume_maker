@@ -11,7 +11,9 @@ export default function LanguagePreview() {
           <For each={resume.languages?.data}>
             {(l) => (
               <li>
-                <Pill>{`${l.language}${l.fluency ? ` - ${l.fluency}` : ""}`}</Pill>
+                <Pill>{`${l.language}${
+                  l.fluency ? ` - ${l.fluency}` : ""
+                }`}</Pill>
               </li>
             )}
           </For>

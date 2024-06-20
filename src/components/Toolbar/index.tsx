@@ -2,8 +2,8 @@ import Button from "~/components/common/Button";
 import ImportIcon from "~/icons/ImportIcon";
 import PrintIcon from "~/icons/PrintIcon";
 import SaveIcon from "~/icons/SaveIcon";
-import { resume, setResume } from "~/store/resumeStore";
 import { tailwindStyle } from "~/resources/tailwindStyles";
+import { resume, setResume } from "~/store/resumeStore";
 
 export default function Toolbar() {
   const ICON_SIZE = 30;
@@ -11,12 +11,12 @@ export default function Toolbar() {
   function handlePrint() {
     const content = document.getElementById("preview")?.innerHTML;
     if (!content) return alert("print error: cannot get preview component");
-    const a = window.open('', '');
-    a?.document.write('<html><head>');
+    const a = window.open("", "");
+    a?.document.write("<html><head>");
     a?.document.write(`<style>${tailwindStyle}</style>`);
-    a?.document.write('</head><body>');
+    a?.document.write("</head><body>");
     a?.document.write(content);
-    a?.document.write('</body></html>');
+    a?.document.write("</body></html>");
     a?.print();
     a?.close();
   }

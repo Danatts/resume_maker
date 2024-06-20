@@ -1,4 +1,4 @@
-import type { Resume } from "~/types"
+import type { Resume } from "~/types";
 
 const placeholder: Resume = {
   basics: {
@@ -13,7 +13,7 @@ const placeholder: Resume = {
       summary: "A summary of John Doe…",
       city: "San Francisco",
       country: "United States",
-    }
+    },
   },
   work: {
     legend: "Experience",

@@ -567,4 +567,4 @@ textarea {
   --tw-text-opacity: 1;
   color: rgb(115 115 115 / var(--tw-text-opacity));
 }
-`
+`;

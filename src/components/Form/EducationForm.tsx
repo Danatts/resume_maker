@@ -24,7 +24,7 @@ export default function EducationForm(props: FormProps) {
           id={`area${props.key}`}
           name="area"
           type="text"
-          placeholder={ph.education?.data[0].area}
+          placeholder={ph.education?.data ? ph.education?.data[0].area : ""}
           value={
             !resume.education?.data
               ? ""
@@ -40,7 +40,9 @@ export default function EducationForm(props: FormProps) {
           id={`institution${props.key}`}
           name="institution"
           type="text"
-          placeholder={ph.education?.data[0].institution}
+          placeholder={
+            ph.education?.data ? ph.education?.data[0].institution : ""
+          }
           value={
             !resume.education?.data
               ? ""
