@@ -6,13 +6,15 @@ import Work from "~/components/Preview/WorkPreview";
 
 export default function Preview() {
   return (
-    <div class="min-h-dvh border border-black shadow-black shadow-md scale-90">
-      <div id="preview" class="p-10">
-        <Basics />
-        <Work />
-        <Education />
-        <Skill />
-        <Language />
+    <div class="bg-gray-200 w-fit h-fit rounded justify-self-center scale-90">
+      <div class="h-[29.7cm] w-[21cm] border border-black shadow-gray-500 shadow-md overflow-scroll scale-90 bg-white p-10">
+        <div id="preview">
+          <Basics />
+          <Work />
+          <Education />
+          <Skill />
+          <Language />
+        </div>
       </div>
     </div>
   );

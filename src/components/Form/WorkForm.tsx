@@ -88,6 +88,7 @@ export default function WorkForm(props: FormProps) {
           id={`summary${props.key}`}
           name="summary"
           placeholder={ph.work?.data ? ph.work?.data[0].summary : ""}
+          rows={5}
           value={
             !resume.work?.data
               ? ""
