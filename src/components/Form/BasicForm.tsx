@@ -6,6 +6,7 @@ import Button from "~/components/common/Button";
 import CameraIcon from "~/icons/CameraIcon";
 import { resume, setResume } from "~/store/resumeStore";
 import type { Basics } from "~/types";
+import Row from "~/components/Form/common/Row";
 
 export default function BasicsForm() {
   const [data, setData] = createStore<Basics>();
@@ -48,28 +49,30 @@ export default function BasicsForm() {
             value={resume?.basics?.data?.label ? resume.basics.data.label : ""}
           />
         </Label>
-        <Label for="email">
-          Email
-          <input
-            autocomplete="email"
-            placeholder={ph.basics?.data?.email}
-            id="email"
-            name="email"
-            type="email"
-            value={resume?.basics?.data?.email ? resume.basics.data.email : ""}
-          />
-        </Label>
-        <Label for="phone">
-          Phone
-          <input
-            autocomplete="tel"
-            placeholder={ph.basics?.data?.phone}
-            id="phone"
-            name="phone"
-            type="tel"
-            value={resume?.basics?.data?.phone ? resume.basics.data.phone : ""}
-          />
-        </Label>
+        <Row>
+          <Label for="email">
+            Email
+            <input
+              autocomplete="email"
+              placeholder={ph.basics?.data?.email}
+              id="email"
+              name="email"
+              type="email"
+              value={resume?.basics?.data?.email ? resume.basics.data.email : ""}
+            />
+          </Label>
+          <Label for="phone">
+            Phone
+            <input
+              autocomplete="tel"
+              placeholder={ph.basics?.data?.phone}
+              id="phone"
+              name="phone"
+              type="tel"
+              value={resume?.basics?.data?.phone ? resume.basics.data.phone : ""}
+            />
+          </Label>
+        </Row>
         <Label for="url">
           Website
           <input
@@ -81,29 +84,31 @@ export default function BasicsForm() {
             value={resume?.basics?.data?.url ? resume.basics.data.url : ""}
           />
         </Label>
-        <Label for="city">
-          City
-          <input
-            placeholder={ph.basics?.data?.city}
-            id="city"
-            name="city"
-            type="text"
-            value={resume?.basics?.data?.city ? resume.basics.data.city : ""}
-          />
-        </Label>
-        <Label for="country">
-          Country
-          <input
-            autocomplete="country"
-            placeholder={ph.basics?.data?.country}
-            id="country"
-            name="country"
-            type="text"
-            value={
-              resume?.basics?.data?.country ? resume.basics.data.country : ""
-            }
-          />
-        </Label>
+        <Row>
+          <Label for="city">
+            City
+            <input
+              placeholder={ph.basics?.data?.city}
+              id="city"
+              name="city"
+              type="text"
+              value={resume?.basics?.data?.city ? resume.basics.data.city : ""}
+            />
+          </Label>
+          <Label for="country">
+            Country
+            <input
+              autocomplete="country"
+              placeholder={ph.basics?.data?.country}
+              id="country"
+              name="country"
+              type="text"
+              value={
+                resume?.basics?.data?.country ? resume.basics.data.country : ""
+              }
+            />
+          </Label>
+        </Row>
         <Label for="summary">
           Summary
           <textarea

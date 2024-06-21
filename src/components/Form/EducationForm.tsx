@@ -4,6 +4,7 @@ import ph from "~/components/Form/placeholder";
 import { resume, setResume } from "~/store/resumeStore";
 import type { Education, FormProps } from "~/types";
 import { getTodayDate } from "~/utils/date";
+import Row from "~/components/Form/common/Row";
 
 export default function EducationForm(props: FormProps) {
   const [data, setData] = createStore<Education>({});
@@ -52,38 +53,40 @@ export default function EducationForm(props: FormProps) {
           }
         />
       </Label>
-      <Label for={`startDate${props.key}`}>
-        Starting date
-        <input
-          id={`startDate${props.key}`}
-          name="startDate"
-          type="date"
-          max={getTodayDate()}
-          value={
-            !resume.education?.data
-              ? ""
-              : resume?.education.data[props.key]?.startDate
-                ? resume.education.data[props.key].startDate
-                : undefined
-          }
-        />
-      </Label>
-      <Label for={`endDate${props.key}`}>
-        Ending date
-        <input
-          id={`endDate${props.key}`}
-          name="endDate"
-          type="date"
-          max={getTodayDate()}
-          value={
-            !resume.education?.data
-              ? ""
-              : resume?.education.data[props.key]?.endDate
-                ? resume.education.data[props.key].endDate
-                : undefined
-          }
-        />
-      </Label>
+      <Row>
+        <Label for={`startDate${props.key}`}>
+          Starting date
+          <input
+            id={`startDate${props.key}`}
+            name="startDate"
+            type="date"
+            max={getTodayDate()}
+            value={
+              !resume.education?.data
+                ? ""
+                : resume?.education.data[props.key]?.startDate
+                  ? resume.education.data[props.key].startDate
+                  : undefined
+            }
+          />
+        </Label>
+        <Label for={`endDate${props.key}`}>
+          Ending date
+          <input
+            id={`endDate${props.key}`}
+            name="endDate"
+            type="date"
+            max={getTodayDate()}
+            value={
+              !resume.education?.data
+                ? ""
+                : resume?.education.data[props.key]?.endDate
+                  ? resume.education.data[props.key].endDate
+                  : undefined
+            }
+          />
+        </Label>
+      </Row>
     </fieldset>
   );
 }

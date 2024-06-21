@@ -8,8 +8,8 @@ export default function App() {
   return (
     <MetaProvider>
       <Title>Resume Maker</Title>
-      <main class="p-2">
-        <section class="grid gap-4 lg:grid-cols-2">
+      <main>
+        <section class="grid grid-cols-2 max-w-[1300px] p-2 mx-auto">
           <Form />
           <Preview />
         </section>

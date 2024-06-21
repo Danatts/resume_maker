@@ -6,6 +6,6 @@
 
   input,
   textarea {
-    @apply border rounded py-1 px-2
+    @apply border rounded py-1 px-2 font-normal
   }
 }

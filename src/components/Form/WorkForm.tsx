@@ -4,6 +4,7 @@ import ph from "~/components/Form/placeholder";
 import { resume, setResume } from "~/store/resumeStore";
 import type { FormProps, Work } from "~/types";
 import { getTodayDate } from "~/utils/date";
+import Row from "~/components/Form/common/Row";
 
 export default function WorkForm(props: FormProps) {
   const [data, setData] = createStore<Work>({});
@@ -50,38 +51,40 @@ export default function WorkForm(props: FormProps) {
           }
         />
       </Label>
-      <Label for={`startDate${props.key}`}>
-        Starting date
-        <input
-          id={`startDate${props.key}`}
-          name="startDate"
-          type="date"
-          max={getTodayDate()}
-          value={
-            !resume.work?.data
-              ? ""
-              : resume?.work.data[props.key]?.startDate
-                ? resume.work.data[props.key].startDate
-                : undefined
-          }
-        />
-      </Label>
-      <Label for={`endDate${props.key}`}>
-        Ending date
-        <input
-          id={`endDate${props.key}`}
-          name="endDate"
-          type="date"
-          max={getTodayDate()}
-          value={
-            !resume.work?.data
-              ? ""
-              : resume?.work.data[props.key]?.endDate
-                ? resume.work.data[props.key].endDate
-                : undefined
-          }
-        />
-      </Label>
+      <Row>
+        <Label for={`startDate${props.key}`}>
+          Starting date
+          <input
+            id={`startDate${props.key}`}
+            name="startDate"
+            type="date"
+            max={getTodayDate()}
+            value={
+              !resume.work?.data
+                ? ""
+                : resume?.work.data[props.key]?.startDate
+                  ? resume.work.data[props.key].startDate
+                  : undefined
+            }
+          />
+        </Label>
+        <Label for={`endDate${props.key}`}>
+          Ending date
+          <input
+            id={`endDate${props.key}`}
+            name="endDate"
+            type="date"
+            max={getTodayDate()}
+            value={
+              !resume.work?.data
+                ? ""
+                : resume?.work.data[props.key]?.endDate
+                  ? resume.work.data[props.key].endDate
+                  : undefined
+            }
+          />
+        </Label>
+      </Row>
       <Label for={`summary${props.key}`}>
         Summary
         <textarea
