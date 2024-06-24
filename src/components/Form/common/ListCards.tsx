@@ -10,15 +10,15 @@ import Button from "~/components/common/Button";
 import { resume, setResume } from "~/store/resumeStore";
 
 interface Props {
-  componentName: keyof typeof FORM;
   section: keyof typeof resume;
 }
 
 const FORM = {
-  EducationForm,
-  LanguageForm,
-  SkillForm,
-  WorkForm,
+  basics: WorkForm,
+  work: WorkForm,
+  education: EducationForm,
+  skills: SkillForm,
+  languages: LanguageForm,
 };
 
 export default function ListCards(props: Props) {
@@ -42,7 +42,7 @@ export default function ListCards(props: Props) {
         <For each={list()}>
           {(_, index) => (
             <FormCard delete={() => removeCard(index())}>
-              <Dynamic component={FORM[props.componentName]} key={index()} />
+              <Dynamic component={FORM[props.section]} key={index()} />
             </FormCard>
           )}
         </For>

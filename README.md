@@ -2,5 +2,3 @@
 
 ## TODO
 
-### TypeScript
-- ListCards

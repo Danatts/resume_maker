@@ -5,10 +5,10 @@ export default function FormPanel() {
   return (
     <div class="flex flex-col gap-2">
       <Basic />
-      <List componentName={"WorkForm"} section={"work"} />
-      <List componentName={"EducationForm"} section={"education"} />
-      <List componentName={"SkillForm"} section={"skills"} />
-      <List componentName={"LanguageForm"} section={"languages"} />
+      <List section={"work"} />
+      <List section={"education"} />
+      <List section={"skills"} />
+      <List section={"languages"} />
     </div>
   );
 }

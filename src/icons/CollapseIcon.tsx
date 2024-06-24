@@ -11,7 +11,7 @@ export default function CollapsedIcon(props: { size: number }) {
     >
       <title>Collapse</title>
       <path
-        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+        d="M6 15L12 9L18 15"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
