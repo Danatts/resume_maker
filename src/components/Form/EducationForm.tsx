@@ -1,4 +1,5 @@
 import { createStore } from "solid-js/store";
+import Fieldset from "~/components/Form/common/Fieldset";
 import Label from "~/components/Form/common/Label";
 import ph from "~/components/Form/placeholder";
 import { resume, setResume } from "~/store/resumeStore";
@@ -17,7 +18,7 @@ export default function EducationForm(props: FormProps) {
   }
 
   return (
-    <fieldset onInput={handleInput}>
+    <Fieldset action={handleInput}>
       <Label for={`area${props.key}`}>
         Area
         <input
@@ -35,6 +36,7 @@ export default function EducationForm(props: FormProps) {
           }
         />
       </Label>
+      <Row>
       <Label for={`institution${props.key}`}>
         Institution
         <input
@@ -53,7 +55,6 @@ export default function EducationForm(props: FormProps) {
           }
         />
       </Label>
-      <Row>
         <Label for={`startDate${props.key}`}>
           Starting date
           <input
@@ -87,6 +88,6 @@ export default function EducationForm(props: FormProps) {
           />
         </Label>
       </Row>
-    </fieldset>
+    </Fieldset>
   );
 }

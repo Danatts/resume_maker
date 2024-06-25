@@ -31,14 +31,14 @@ export default function ListCards(props: Props) {
   function removeCard(id: number) {
     setList(list().filter((_, i) => i !== id));
     const copy = resume[props.section]?.data;
-    if (copy) return null;
+    if (!copy) return null;
     // @ts-ignore
     setResume(props.section, "data", [...copy].toSpliced(id, 1));
   }
 
   return (
     <FormSection section={props.section}>
-      <form id={props.section} name={props.section}>
+      <form class="flex flex-col gap-2 pt-4" id={props.section} name={props.section}>
         <For each={list()}>
           {(_, index) => (
             <FormCard delete={() => removeCard(index())}>
@@ -48,7 +48,7 @@ export default function ListCards(props: Props) {
         </For>
         <div class="self-center">
           <Button type="button" click={addCard}>
-            <p class="px-2 py-1">Add</p>
+            <p class="px-2 py-1">+ New</p>
           </Button>
         </div>
       </form>

@@ -5,6 +5,7 @@ import { resume, setResume } from "~/store/resumeStore";
 import type { FormProps, Work } from "~/types";
 import { getTodayDate } from "~/utils/date";
 import Row from "~/components/Form/common/Row";
+import Fieldset from "~/components/Form/common/Fieldset";
 
 export default function WorkForm(props: FormProps) {
   const [data, setData] = createStore<Work>({});
@@ -17,7 +18,7 @@ export default function WorkForm(props: FormProps) {
   }
 
   return (
-    <fieldset onInput={handleInput}>
+    <Fieldset action={handleInput}>
       <Label for={`position${props.key}`}>
         Position
         <input
@@ -34,24 +35,24 @@ export default function WorkForm(props: FormProps) {
           }
         />
       </Label>
-      <Label for={`institution${props.key}`}>
-        Company
-        <input
-          autocomplete="institution"
-          id={`institution${props.key}`}
-          name="institution"
-          type="text"
-          placeholder={ph.work?.data ? ph.work?.data[0].institution : ""}
-          value={
-            !resume.work?.data
-              ? ""
-              : resume?.work.data[props.key]?.institution
-                ? resume.work.data[props.key].institution
-                : ""
-          }
-        />
-      </Label>
       <Row>
+        <Label for={`institution${props.key}`}>
+          Company
+          <input
+            autocomplete="institution"
+            id={`institution${props.key}`}
+            name="institution"
+            type="text"
+            placeholder={ph.work?.data ? ph.work?.data[0].institution : ""}
+            value={
+              !resume.work?.data
+                ? ""
+                : resume?.work.data[props.key]?.institution
+                  ? resume.work.data[props.key].institution
+                  : ""
+            }
+          />
+        </Label>
         <Label for={`startDate${props.key}`}>
           Starting date
           <input
@@ -101,6 +102,6 @@ export default function WorkForm(props: FormProps) {
           }
         />
       </Label>
-    </fieldset>
+    </Fieldset>
   );
 }

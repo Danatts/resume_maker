@@ -9,3 +9,21 @@
     @apply border rounded py-1 px-2 font-normal
   }
 }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 7px;
+}
+ 
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+ 
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

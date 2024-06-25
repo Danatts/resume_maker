@@ -1,4 +1,5 @@
 import { createStore } from "solid-js/store";
+import Fieldset from "~/components/Form/common/Fieldset";
 import Label from "~/components/Form/common/Label";
 import ph from "~/components/Form/placeholder";
 import { resume, setResume } from "~/store/resumeStore";
@@ -16,7 +17,7 @@ export default function SkillForm(props: FormProps) {
   }
 
   return (
-    <fieldset onInput={handleInput}>
+    <Fieldset action={handleInput}>
       <Row>
         <Label for={`name${props.key}`}>
           Name
@@ -52,6 +53,6 @@ export default function SkillForm(props: FormProps) {
           />
         </Label>
       </Row>
-    </fieldset>
+    </Fieldset>
   );
 }

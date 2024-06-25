@@ -43,9 +43,9 @@ export default function FormSection(props: Props) {
   }
 
   return (
-    <section class="border p-2 rounded">
-      <header class="flex justify-between p-2">
-        <div class="flex gap-1 items-center w-full">
+    <section class="border py-4 px-8 rounded">
+      <header class="flex justify-between">
+        <div class="flex gap-2 items-center w-full">
           <Dynamic component={ICON[props.section]} size={ICON_SIZE} />
           <input
             class="text-xl font-bold"
@@ -53,23 +53,23 @@ export default function FormSection(props: Props) {
             onInput={handleTitle}
           />
         </div>
-        <div class="flex gap-1 items-center">
+        <div class="flex gap-2 items-center">
           <button type="button" onClick={toggleContent}>
             <Show when={!toggle()} fallback={<CollapsedIcon size={ICON_SIZE} />}>
-              <ExpandedIcon size={25} />
+              <ExpandedIcon size={ICON_SIZE} />
             </Show>
           </button>
           <button type="button" onClick={handleView}>
             <Show
               when={resume[props.section]?.view}
-              fallback={<HideIcon size={25} />}
+              fallback={<HideIcon size={ICON_SIZE} />}
             >
-              <ShowIcon size={25} />
+              <ShowIcon size={ICON_SIZE} />
             </Show>
           </button>
         </div>
       </header>
-      <div class="flex flex-col gap-4">
+      <div>
         <Show when={toggle()}>{props.children}</Show>
       </div>
     </section>

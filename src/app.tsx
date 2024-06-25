@@ -9,7 +9,7 @@ export default function App() {
     <MetaProvider>
       <Title>Resume Maker</Title>
       <main>
-        <section class="grid grid-cols-2 max-w-[1300px] p-2 mx-auto">
+        <section class="grid grid-cols-2 max-w-[1300px] py-2 mx-auto">
           <Form />
           <Preview />
         </section>
