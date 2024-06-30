@@ -13,7 +13,7 @@ export default function Button(props: Props) {
       id={props.id}
       type={props.type}
       onClick={props.click}
-      class="flex border rounded-md hover:bg-gray-100 active:scale-95"
+      class="flex border rounded-md hover:bg-violet-200 active:scale-95"
     >
       {props.children}
     </button>

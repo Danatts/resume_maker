@@ -5,7 +5,7 @@ interface Props {
 }
 export default function Row(props: Props) {
   return (
-    <div class="flex justify-between">
+    <div class="flex justify-between gap-2">
       {props.children}
     </div>
   )
